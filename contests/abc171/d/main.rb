@@ -2,18 +2,14 @@ N = gets.to_i
 AN = gets.split.map(&:to_i)
 BC = gets.chomp.to_i.times.map { gets.split.map(&:to_i) }
 
-require "set"
+sum = AN.sum
+counts = AN.group_by(&:itself).to_h { |k, v| [k, v.count] } # or AN.tally
+counts.default = 0
 
-changes = Set.new(BC.map { |bc| bc[0] })
-sums = [0] * BC.length
-
-others = (AN - changes.to_a)
-osum = others.sum
-an = AN - others
 BC.each do |bc|
   b, c = bc
-  an = an.map { |n| n == b ? c : n }
-  puts osum + an.sum
+  sum = sum + (c - b) * counts[b]
+  counts[c] = counts[c] + counts[b]
+  counts[b] = 0
+  puts sum
 end
-
-# TLE

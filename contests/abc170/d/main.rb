@@ -10,7 +10,9 @@ while a
   break unless a
   while as[0] == a # skip same numbers
     a = as.shift
+    a = false if as.length == 0
   end
+  break unless a
 
   nex = []
   as.each do |n|

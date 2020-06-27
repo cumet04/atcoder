@@ -12,4 +12,5 @@ mkdir -p $DIRNAME
 for label in $LABELS; do
   mkdir -p $DIRNAME/$label/inouts
   touch $DIRNAME/$label/main.rb
+  ln -s ../../../scripts/test.sh $DIRNAME/$label/test.sh
 done

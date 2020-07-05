@@ -1,13 +1,13 @@
 N, K = gets.split.map(&:to_i)
 AS = gets.split.map(&:to_i)
 
-sorted = AS.sort_by(&:abs).reverse
+def nums
+  sorted = AS.sort_by(&:abs).reverse
 
-nums = sorted.first(K)
-neg = nums.select { |n| n < 0 }.count
+  nums = sorted.first(K)
+  neg = nums.select { |n| n < 0 }.count
 
-if neg % 2 == 1 && N > K
-  ok = false
+  return nums unless neg % 2 == 1 && N > K
   sorted[K..-1].each do |n|
     if n > 0
       K.times.each do |i|
@@ -16,31 +16,30 @@ if neg % 2 == 1 && N > K
           break
         end
       end
-      ok = true
-      break
+      return nums
     end
   end
-  unless ok
-    # 残りは全部マイナスの場合
-    if neg == nums.count
-      # そもそも全部マイナスの場合
-      if sorted.any? { |n| n == 0 }
-        puts "0"
-        exit
-      end
-      nums = sorted.last(K)
-    else
-      # 元の選択に正がある場合
-      if sorted[K] != 0
-        K.times.each do |i|
-          if nums[i] > 0
-            nums[i] = sorted[K]
-            break
-          end
+
+  # 残りは全部マイナスの場合
+  if neg == nums.count
+    # そもそも全部マイナスの場合
+    if sorted.any? { |n| n == 0 }
+      puts "0"
+      exit
+    end
+    return sorted.last(K)
+  else
+    # 元の選択に正がある場合
+    if sorted[K] != 0
+      K.times.each do |i|
+        if nums[i] > 0
+          nums[i] = sorted[K]
+          return nums
         end
       end
     end
   end
+  return nums
 end
 
 result = 1

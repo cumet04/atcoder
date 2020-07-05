@@ -4,13 +4,25 @@ ABS = N.times.map { gets.split.map(&:to_i) }
 count = N * (N - 1) / 2
 
 cross = {}
+cross.default = 0
 
-vecs = ABS.map do |ab|
+ABS.each do |ab|
   a, b = ab
-  n = Math.sqrt(a ** 2 + b ** 2)
-  an = a / n
-  bn = b / n
-  cross[-bn, ab] = [a, b]
+  if b == 0
+    cross[[0, 1]] += 1
+    next
+  end
+  gcd = a.gcd(b)
+  if b > 0
+    cross[[a / gcd, b / gcd]] += 1
+  else
+    cross[[-1 * (a / gcd), -1 * (b / gcd)]] += 1
+  end
 end
 
-# わからん
+count = 0
+cross.each do |k, v|
+  count += 1 if v == 1
+end
+
+puts count * (count - 1) / 2

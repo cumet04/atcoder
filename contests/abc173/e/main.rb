@@ -2,44 +2,40 @@ N, K = gets.split.map(&:to_i)
 AS = gets.split.map(&:to_i)
 
 def nums
+  return AS if N == K
+
   sorted = AS.sort_by(&:abs).reverse
 
+  return sorted.last(K) if AS.all? { |n| n < 0 } && K % 2 == 1
+
   nums = sorted.first(K)
-  neg = nums.select { |n| n < 0 }.count
 
-  return nums unless neg % 2 == 1 && N > K
-  sorted[K..-1].each do |n|
-    if n > 0
-      K.times.each do |i|
-        if nums[-i - 1] < 0
-          nums[-i - 1] = n
-          break
-        end
-      end
-      return nums
+  return nums unless nums.select { |n| n < 0 }.count % 2 == 1
+
+  posplus = begin
+      plus = sorted[K..-1].find { |n| n > 0 } || 0
+      swap = nums.reverse.find { |n| n < 0 } || 0
+      [plus, swap]
+    end
+
+  negplus = begin
+      plus = sorted[K..-1].find { |n| n < 0 } || 0
+      swap = nums.reverse.find { |n| n > 0 } || 0
+      [plus, swap]
+    end
+
+  swaps = if (posplus[0] * posplus[1]).abs >= (negplus[0] * negplus[1]).abs
+      posplus
+    else
+      negplus
+    end
+  nums.length.times.each do |i|
+    if nums[i] == swaps[1]
+      nums[i] = swaps[0]
+      break
     end
   end
-
-  # 残りは全部マイナスの場合
-  if neg == nums.count
-    # そもそも全部マイナスの場合
-    if sorted.any? { |n| n == 0 }
-      puts "0"
-      exit
-    end
-    return sorted.last(K)
-  else
-    # 元の選択に正がある場合
-    if sorted[K] != 0
-      K.times.each do |i|
-        if nums[i] > 0
-          nums[i] = sorted[K]
-          return nums
-        end
-      end
-    end
-  end
-  return nums
+  nums
 end
 
 result = 1

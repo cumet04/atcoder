@@ -10,21 +10,34 @@ def nums
 
   nums = sorted.first(K)
 
-  return nums unless nums.select { |n| n < 0 }.count % 2 == 1
+  return nums if nums.select { |n| n < 0 }.count % 2 == 0
 
   posplus = begin
-      plus = sorted[K..-1].find { |n| n > 0 } || 0
-      swap = nums.reverse.find { |n| n < 0 } || 0
+      plus = sorted[K..-1].find { |n| n > 0 }
+      swap = nums.reverse.find { |n| n < 0 }
       [plus, swap]
     end
 
   negplus = begin
-      plus = sorted[K..-1].find { |n| n < 0 } || 0
-      swap = nums.reverse.find { |n| n > 0 } || 0
+      plus = sorted[K..-1].find { |n| n < 0 }
+      swap = nums.reverse.find { |n| n > 0 }
       [plus, swap]
     end
 
-  swaps = if (posplus[0] * posplus[1]).abs >= (negplus[0] * negplus[1]).abs
+  if negplus.any?(&:nil?) && posplus.any?(&:nil?)
+    # numsのままだとマイナスが確定するが、候補にゼロがあればゼロにする
+    if sorted[K..-1].any?(&:zero?)
+      puts "0"
+      exit
+    end
+    return nums
+  end
+
+  swaps = if negplus.any?(&:nil?)
+      posplus
+    elsif posplus.any?(&:nil?)
+      negplus
+    elsif (posplus[0] * negplus[1]).abs >= (negplus[0] * posplus[1]).abs
       posplus
     else
       negplus

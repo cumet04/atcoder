@@ -1,0 +1,55 @@
+{
+  "ID": "abc166",
+  "Title": "AtCoder Beginner Contest 166",
+  "URL": "https://atcoder.jp/contests/abc166/tasks",
+  "Tasks": [
+    {
+      "ID": "abc166_a",
+      "Label": "A",
+      "Title": "A?C",
+      "Directory": "a",
+      "Script": "main.rb",
+      "SampleDir": "tests"
+    },
+    {
+      "ID": "abc166_b",
+      "Label": "B",
+      "Title": "Trick or Treat",
+      "Directory": "b",
+      "Script": "main.rb",
+      "SampleDir": "tests"
+    },
+    {
+      "ID": "abc166_c",
+      "Label": "C",
+      "Title": "Peaks",
+      "Directory": "c",
+      "Script": "main.rb",
+      "SampleDir": "tests"
+    },
+    {
+      "ID": "abc166_d",
+      "Label": "D",
+      "Title": "I hate Factorization",
+      "Directory": "d",
+      "Script": "main.rb",
+      "SampleDir": "tests"
+    },
+    {
+      "ID": "abc166_e",
+      "Label": "E",
+      "Title": "This Message Will Self-Destruct in 5s",
+      "Directory": "e",
+      "Script": "main.rb",
+      "SampleDir": "tests"
+    },
+    {
+      "ID": "abc166_f",
+      "Label": "F",
+      "Title": "Three Variables Game",
+      "Directory": "f",
+      "Script": "main.rb",
+      "SampleDir": "tests"
+    }
+  ]
+}

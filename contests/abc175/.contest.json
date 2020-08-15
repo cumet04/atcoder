@@ -1,0 +1,55 @@
+{
+  "ID": "abc175",
+  "Title": "AtCoder Beginner Contest 175",
+  "URL": "https://atcoder.jp/contests/abc175/tasks",
+  "Tasks": [
+    {
+      "ID": "abc175_a",
+      "Label": "A",
+      "Title": "Rainy Season",
+      "Directory": "a",
+      "Script": "main.rb",
+      "SampleDir": "tests"
+    },
+    {
+      "ID": "abc175_b",
+      "Label": "B",
+      "Title": "Making Triangle",
+      "Directory": "b",
+      "Script": "main.rb",
+      "SampleDir": "tests"
+    },
+    {
+      "ID": "abc175_c",
+      "Label": "C",
+      "Title": "Walking Takahashi",
+      "Directory": "c",
+      "Script": "main.rb",
+      "SampleDir": "tests"
+    },
+    {
+      "ID": "abc175_d",
+      "Label": "D",
+      "Title": "Moving Piece",
+      "Directory": "d",
+      "Script": "main.rb",
+      "SampleDir": "tests"
+    },
+    {
+      "ID": "abc175_e",
+      "Label": "E",
+      "Title": "Picking Goods",
+      "Directory": "e",
+      "Script": "main.rb",
+      "SampleDir": "tests"
+    },
+    {
+      "ID": "abc175_f",
+      "Label": "F",
+      "Title": "Making Palindrome",
+      "Directory": "f",
+      "Script": "main.rb",
+      "SampleDir": "tests"
+    }
+  ]
+}

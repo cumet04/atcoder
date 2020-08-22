@@ -1,0 +1,57 @@
+{
+  "ID": "abc176",
+  "Title": "AtCoder Beginner Contest 176",
+  "URL": "https://atcoder.jp/contests/abc176/tasks",
+  "StartAt": "2020-08-22T21:00:00+09:00",
+  "Duration": 6000000000000,
+  "Tasks": [
+    {
+      "ID": "abc176_a",
+      "Label": "A",
+      "Title": "Takoyaki",
+      "Directory": "a",
+      "Script": "main.rb",
+      "SampleDir": "tests"
+    },
+    {
+      "ID": "abc176_b",
+      "Label": "B",
+      "Title": "Multiple of 9",
+      "Directory": "b",
+      "Script": "main.rb",
+      "SampleDir": "tests"
+    },
+    {
+      "ID": "abc176_c",
+      "Label": "C",
+      "Title": "Step",
+      "Directory": "c",
+      "Script": "main.rb",
+      "SampleDir": "tests"
+    },
+    {
+      "ID": "abc176_d",
+      "Label": "D",
+      "Title": "Wizard in Maze",
+      "Directory": "d",
+      "Script": "main.rb",
+      "SampleDir": "tests"
+    },
+    {
+      "ID": "abc176_e",
+      "Label": "E",
+      "Title": "Bomber",
+      "Directory": "e",
+      "Script": "main.rb",
+      "SampleDir": "tests"
+    },
+    {
+      "ID": "abc176_f",
+      "Label": "F",
+      "Title": "Brave CHAIN",
+      "Directory": "f",
+      "Script": "main.rb",
+      "SampleDir": "tests"
+    }
+  ]
+}

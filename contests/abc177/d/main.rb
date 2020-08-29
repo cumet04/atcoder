@@ -19,6 +19,8 @@ def main
         am.add(b)
       else
         next if am == bm
+        # このパターンの場合にSetインスタンスが新規作成になって上書きされるため過去に代入済のmapが更新されない
+        # （a=2,b=3, map[1]==map[2], の場合にmap[2]とmap[3]だけ最新になってmap[1]が古いままになる）
         am + bm
       end
     max = [max, newm.length].max

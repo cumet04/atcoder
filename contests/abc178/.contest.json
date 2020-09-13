@@ -1,0 +1,49 @@
+{
+  "id": "abc178",
+  "title": "AtCoder Beginner Contest 178",
+  "url": "https://atcoder.jp/contests/abc178/tasks",
+  "start_at": "2020-09-13T21:00:00+09:00",
+  "duration": 6000000000000,
+  "script": "main.rb",
+  "sample_dir": "test",
+  "language": "4049",
+  "command": "ruby ./{{.Script}}",
+  "Tasks": [
+    {
+      "id": "abc178_a",
+      "label": "A",
+      "title": "Not",
+      "directory": "a"
+    },
+    {
+      "id": "abc178_b",
+      "label": "B",
+      "title": "Product Max",
+      "directory": "b"
+    },
+    {
+      "id": "abc178_c",
+      "label": "C",
+      "title": "Ubiquity",
+      "directory": "c"
+    },
+    {
+      "id": "abc178_d",
+      "label": "D",
+      "title": "Redistribution",
+      "directory": "d"
+    },
+    {
+      "id": "abc178_e",
+      "label": "E",
+      "title": "Dist Max",
+      "directory": "e"
+    },
+    {
+      "id": "abc178_f",
+      "label": "F",
+      "title": "Contrast",
+      "directory": "f"
+    }
+  ]
+}
